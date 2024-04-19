@@ -1,0 +1,44 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main-css.css')}}">
+        
+        <script src="{{url_for('static', filename='js/javascript.js')}}"></script>
+
+        <title>E-Comemerce-Registration</title>
+    </head>
+    <body>
+        <div class="registar-img">
+            <img src="{{url_for('static', filename='img/reg-img.jpeg')}}" width="100%" height="100%">
+        </div>
+
+        <div class="registar-form">
+            <p style="font-family:'Times New Roman', Times, serif; text-align:center; font-size :30px;background-color:#86A789; padding-top: 90px; text-align:center;"> Register to Buy Images </p>
+      
+            <form method="post" style="padding-top: 50px; padding-left:140px" id='regform'>
+                {{ form.hidden_tag() }}
+            
+                <label for="username">{{ form.username.label() }}</label>
+                {{ form.username(id="username") }}
+            
+                <label for="email">{{ form.email.label() }}</label>
+                {{ form.email(id="email") }}
+            
+                <label for="age">Age:</label>
+                <input type="number" style="margin-bottom: 30px;">
+            
+                <label for="password1">{{ form.password1.label() }}</label>
+                {{ form.password1(placeholder="Password", id="password1") }}
+            
+                <label for="password2">{{ form.password2.label() }}</label>
+                {{ form.password2(placeholder="Confirm Password",id="password2") }}
+            
+                <br>
+                {{ form.submit(id="submitbut") }}
+            </form>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+FROM ubuntu
+
+RUN apt-get install -y python 
+RUN apt-get install python-pip
+RUN pip install flask flask_sqlalchemy flask_login flask_bcrypt flask_wtf wtforms
+
+COPY F:\Freelancing\Flask Application\final\website/ /opt/website/
+
+ENTRYPOINT ["python","/opt/website/run.py"]

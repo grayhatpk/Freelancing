@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main-css.css')}}">
+    <script src="{{url_for('static', filename='js/javascript.js')}}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Login</title>
+</head>
+<body>
+        <div class="login-img">
+            <img src="{{url_for('static', filename='img/runway.jpg')}}" alt="" height="100%" width="100%">
+        </div>
+
+        <div class="login-form">
+            <div class="heading">
+                <h1>Login To your Account</h1>
+            </div>
+                <form method="post" class="form">
+                {{ form.hidden_tag() }}
+            
+                <div class="input-group">
+                    <label for="username">{{ form.username.label() }}</label>
+                    {{ form.username(placeholder="Username", id="username", required=True, style="width: 340px;") }}
+                </div>
+            
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    {{ form.password(placeholder="Password", id="password", required=True, style="margin-bottom: 30px;") }}
+                    <br>
+                    <a href="/register" style="padding-left: 175px;">Don't have an Account</a>
+                </div>
+                
+                {{form.submit(type="submit", value="Login", style="width: 336;")}}
+            </form>
+            
+            <hr>
+            <p style="text-align:center; padding-top:30px"><br>Login to buy the picutres of the famous and classical old royal place</p>
+        </div>
+
+</body>
+</html>
